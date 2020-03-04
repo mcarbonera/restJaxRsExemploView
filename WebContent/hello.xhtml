@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+	<title>Página teste</title>
+	<style type="text/css">
+		#column {
+  			float: left;
+  			width: 33.33%;
+		}
+
+		#row:after {
+  			content: "";
+  			display: table;
+  			clear: both;
+		}
+	</style>
+</h:head> 
+<body>			
+	<center>
+		<h1>Teste Cliente JaxRS</h1>
+		<hr />
+		
+		<div id="row">
+			<div id="column"><h3></h3></div>
+			<div id="column">
+				<h:form>
+					<h2>Buscar Todos</h2>
+					<h:commandButton actionListener="#{testeClienteRestAction.buscarTodos()}" value="Buscar Todos" style="width:150px;height:50px"/>
+					<h2>Buscar Por Id</h2>
+					<h:commandButton actionListener="#{testeClienteRestAction.buscarPorId()}" value = "Buscar Por Id" style="width:150px;height:50px"/>
+					<h2>Cadastrar</h2>
+					<h:commandButton actionListener="#{testeClienteRestAction.cadastrar()}" value = "Cadastrar" style="width:150px;height:50px"/>
+					<h2>Editar</h2>
+					<h:commandButton actionListener="#{testeClienteRestAction.editar()}" value = "Editar" style="width:150px;height:50px"/>
+					<h2>Remover</h2>
+					<h:commandButton actionListener="#{testeClienteRestAction.remover()}" value = "Remover" style="width:150px;height:50px"/>
+				</h:form>
+			</div>
+			<div id="column">
+				<h2>Retorno:</h2>
+				<h:inputTextarea value="#{testeClienteRestAction.resposta}" font-size="100px" cols="50" rows="30" />
+				<!--
+				<textarea value="teste" cols="30" rows="10"/> 
+				-->
+			</div>
+		</div>
+		<hr />
+	</center>
+</body>
+</html>

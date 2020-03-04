@@ -1,0 +1,89 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  	<modelVersion>4.0.0</modelVersion>
+  	<groupId>exemplo</groupId>
+  	<artifactId>restJaxRsExemploView</artifactId>
+  	<version>0.0.1-SNAPSHOT</version>
+  	<packaging>war</packaging>
+  	<name>Rest JaxRs Exemplo View</name>
+  	<description>Visão da Api Exemplo</description>
+  
+  	<properties>
+  		<failOnMissingWebXml>false</failOnMissingWebXml>
+  		
+  		<primefaces.version>6.2</primefaces.version>
+  		<jackson.version>2.10.2</jackson.version>
+  		<pretty.version>3.3.3</pretty.version>
+  		<resteasy.version>3.11.0.Final</resteasy.version>
+  	</properties>
+  
+  	<dependencies>
+  		<!-- Primefaces (É mesmo necessário??? Testar depois)
+  		<dependency>
+			<groupId>org.primefaces</groupId>
+            <artifactId>primefaces</artifactId>
+            <version>${primefaces.version}</version>
+            <scope>provided</scope>
+		</dependency> -->
+		
+		<!-- https://mvnrepository.com/artifact/com.ocpsoft/prettyfaces-jsf2 -->
+		<!-- PrettyFaces (Foi necessário para usar @URLBeanName nas classes Action) -->
+		<dependency>
+    		<groupId>com.ocpsoft</groupId>
+    		<artifactId>prettyfaces-jsf2</artifactId>
+    		<version>${pretty.version}</version>
+    		<scope>provided</scope>
+		</dependency>
+		
+		<!-- CDI -->
+		<!-- https://mvnrepository.com/artifact/javax.enterprise/cdi-api -->
+		<dependency>
+    		<groupId>javax.enterprise</groupId>
+    		<artifactId>cdi-api</artifactId>
+    		<version>2.0.SP1</version>
+    		<scope>provided</scope>
+		</dependency>
+		
+		<!-- JAX-RS -->
+		<!-- https://mvnrepository.com/artifact/org.jboss.resteasy/resteasy-jaxrs -->
+		<dependency>
+    		<groupId>org.jboss.resteasy</groupId>
+    		<artifactId>resteasy-jaxrs</artifactId>
+    		<version>${resteasy.version}</version>
+    		<scope>provided</scope>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
+		<!-- Jackson Core (Json) 
+		<dependency>
+    		<groupId>com.fasterxml.jackson.core</groupId>
+    		<artifactId>jackson-core</artifactId>
+    		<version>${jackson.version}</version>
+    		<scope>provided</scope>
+		</dependency> -->
+		
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+		<dependency>
+    		<groupId>com.fasterxml.jackson.core</groupId>
+    		<artifactId>jackson-databind</artifactId>
+    		<version>2.10.2</version>
+    		<scope>provided</scope>
+		</dependency>
+	</dependencies>
+ 	
+ 	<build>
+		<finalName>${project.artifactId}</finalName>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<showDeprecation>true</showDeprecation>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
